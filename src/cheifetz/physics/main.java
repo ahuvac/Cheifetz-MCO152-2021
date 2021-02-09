@@ -1,3 +1,4 @@
+package cheifetz.physics;
 public class main {
     public static void main(String[] args) {
         Rocket rocket = new Rocket(71, 35);
