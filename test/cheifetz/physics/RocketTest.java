@@ -1,8 +1,9 @@
 package cheifetz.physics;
+
 import org.junit.Assert;
 import org.junit.Test;
 
-public class testRocket {
+public class RocketTest {
     @Test
     public void getX() {
         Rocket rocket = new Rocket(71, 35);

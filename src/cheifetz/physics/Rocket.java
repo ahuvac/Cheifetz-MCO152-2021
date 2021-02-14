@@ -1,5 +1,5 @@
 package cheifetz.physics;
-public class Rocket {
+public class    Rocket {
     private final double velocity;
     private final double angle;
     final double GRAVITY = 9.8;
