@@ -8,12 +8,22 @@ import java.io.IOException;
 
 public class DictionaryTest {
 
+
     @Test
-    public void hasWord() throws FileNotFoundException {
-        Dictionary dict = new Dictionary("/Users/ahuvacheifetz/Downloads/dictionary.txt");
-        Assert.assertTrue(dict.hasWord("OCCIDENTALIZING"));
-        Assert.assertTrue(dict.hasWord("KARN"));
-        Assert.assertTrue(dict.hasWord("apron"));
+    public void hasWord_true() throws FileNotFoundException {
+        Dictionary dict = new Dictionary("dictionary.txt");
+        Assert.assertTrue(dict.hasWord("VAGRANCY"));
+    }
+
+    @Test
+    public void hasWord_lowercase_true() throws FileNotFoundException {
+        Dictionary dict = new Dictionary("dictionary.txt");
+        Assert.assertTrue(dict.hasWord("cat"));
+    }
+
+    @Test
+    public void hasWord_false() throws FileNotFoundException {
+        Dictionary dict = new Dictionary("dictionary.txt");
         Assert.assertFalse(dict.hasWord("Ahuva"));
     }
 
