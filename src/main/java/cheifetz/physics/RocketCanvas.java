@@ -16,25 +16,18 @@ public class RocketCanvas extends Canvas {
     public void draw(Rocket rocket)
     {
         GraphicsContext context = getGraphicsContext2D();
-
         context.setFill(Color.LAVENDERBLUSH);
         context.fillRect(0,0, getWidth(), getHeight());
         context.setFill(Color.CORAL);
         context.translate(0, getHeight());
-
         context.beginPath();
         for(double sec = 0; sec <= rocket.timeToLand(); sec += 0.5){
             context.fillOval(rocket.getX(sec), -rocket.getY(sec),  5 ,5);
             context.setLineWidth(.5);
             context.lineTo(rocket.getX(sec),-rocket.getY(sec));
-
         }
         context.stroke();
         context.translate(0, -getHeight());
-
-
-
     }
-
 
 }
