@@ -10,33 +10,34 @@
 <GridPane xmlns="http://javafx.com/javafx"
           xmlns:fx="http://javafx.com/fxml"
           fx:controller="cheifetz.scrabble.ScrabbleController"
+          stylesheets="@dictionary.css"
           alignment="center" hgap="10" vgap="10">
 
     <padding>
         <Insets top="10" right="10" bottom="10" left="10"/>
     </padding>
 
-<Label text = "A" GridPane.columnIndex="0" GridPane.rowIndex="0" style=" -fx-border-color:black; -fx-border-width: 1; -fx-border-style: solid; -fx-padding: 5 8 5 8;"/>
-<Label text = "A" GridPane.columnIndex="2" GridPane.rowIndex="0" style=" -fx-border-color:black; -fx-border-width: 1; -fx-border-style: solid; -fx-padding: 5 8 5 8;"/>
-<Label text = "A" GridPane.columnIndex="4" GridPane.rowIndex="0" style=" -fx-border-color:black; -fx-border-width: 1; -fx-border-style: solid; -fx-padding: 5 8 5 8;"/>
-<Label text = "A" GridPane.columnIndex="6" GridPane.rowIndex="0" style=" -fx-border-color:black; -fx-border-width: 1; -fx-border-style: solid; -fx-padding: 5 8 5 8;"/>
-<Label text = "A" GridPane.columnIndex="8" GridPane.rowIndex="0" style=" -fx-border-color:black; -fx-border-width: 1; -fx-border-style: solid; -fx-padding: 5 8 5 8;"/>
-<Label text = "A" GridPane.columnIndex="10" GridPane.rowIndex="0" style=" -fx-border-color:black; -fx-border-width: 1; -fx-border-style: solid; -fx-padding: 5 8 5 8;"/>
-<Label text = "A" GridPane.columnIndex="12" GridPane.rowIndex="0" style=" -fx-border-color:black; -fx-border-width: 1; -fx-border-style: solid; -fx-padding: 5 8 5 8;"/>
+<Label text = "A" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+<Label text = "A" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+<Label text = "A" GridPane.columnIndex="4" GridPane.rowIndex="0"/>
+<Label text = "A" GridPane.columnIndex="6" GridPane.rowIndex="0"/>
+<Label text = "A" GridPane.columnIndex="8" GridPane.rowIndex="0"/>
+<Label text = "A" GridPane.columnIndex="10" GridPane.rowIndex="0"/>
+<Label text = "A" GridPane.columnIndex="12" GridPane.rowIndex="0"/>
 
 
-<Button text="Submit" GridPane.columnIndex="1" GridPane.rowIndex="4" GridPane.columnSpan="4" onAction="#checkWord" style=" -fx-border-color:black; -fx-border-width: 1; -fx-border-style: solid" minHeight= "30" minWidth="75" />
-<Button text="Clear" GridPane.columnIndex="5" GridPane.rowIndex="4" GridPane.columnSpan="4" onAction="#clear" style=" -fx-border-color:black; -fx-border-width: 1; -fx-border-style: solid" minHeight= "30" minWidth="75"/>
-<Button text="# Points" GridPane.columnIndex="9" GridPane.rowIndex="4" GridPane.columnSpan="4" onAction="#getPoints" style=" -fx-border-color:black; -fx-border-width: 1; -fx-border-style: solid" minHeight= "30" minWidth="75"/>
+<Button text="Submit" GridPane.columnIndex="1" GridPane.rowIndex="4" GridPane.columnSpan="4" onAction="#checkWord" />
+<Button text="Clear" GridPane.columnIndex="5" GridPane.rowIndex="4" GridPane.columnSpan="4" onAction="#clear" />
+<Button text="# Points" GridPane.columnIndex="9" GridPane.rowIndex="4" GridPane.columnSpan="4" onAction="#getPoints"  />
 
 
-<Label text = "A" GridPane.columnIndex="0" GridPane.rowIndex="8" style=" -fx-border-color:black; -fx-border-width: 1; -fx-border-style: solid; -fx-padding: 5 8 5 8;"/>
-<Label text = "A"  GridPane.columnIndex="2" GridPane.rowIndex="8" style=" -fx-border-color:black; -fx-border-width: 1; -fx-border-style: solid; -fx-padding: 5 8 5 8;"/>
-<Label text = "A" GridPane.columnIndex="4" GridPane.rowIndex="8" style=" -fx-border-color:black; -fx-border-width: 1; -fx-border-style: solid; -fx-padding: 5 8 5 8;"/>
-<Label text = "A" GridPane.columnIndex="6" GridPane.rowIndex="8" style=" -fx-border-color:black; -fx-border-width: 1; -fx-border-style: solid; -fx-padding: 5 8 5 8;"/>
-<Label text = "A" GridPane.columnIndex="8" GridPane.rowIndex="8" style=" -fx-border-color:black; -fx-border-width: 1; -fx-border-style: solid; -fx-padding: 5 8 5 8;"/>
-<Label text = "A" GridPane.columnIndex="10" GridPane.rowIndex="8" style=" -fx-border-color:black; -fx-border-width: 1; -fx-border-style: solid; -fx-padding: 5 8 5 8;"/>
-<Label text = "A" GridPane.columnIndex="12" GridPane.rowIndex="8" style=" -fx-border-color:black; -fx-border-width: 1; -fx-border-style: solid; -fx-padding: 5 8 5 8;"/>
+<Label text = "A" GridPane.columnIndex="0" GridPane.rowIndex="8"/>
+<Label text = "A"  GridPane.columnIndex="2" GridPane.rowIndex="8"/>
+<Label text = "A" GridPane.columnIndex="4" GridPane.rowIndex="8"/>
+<Label text = "A" GridPane.columnIndex="6" GridPane.rowIndex="8"/>
+<Label text = "A" GridPane.columnIndex="8" GridPane.rowIndex="8"/>
+<Label text = "A" GridPane.columnIndex="10" GridPane.rowIndex="8"/>
+<Label text = "A" GridPane.columnIndex="12" GridPane.rowIndex="8"/>
 
 
 </GridPane>
