@@ -16,7 +16,6 @@
         <Insets top="25" right="25" bottom="10" left="25"/>
     </padding>
 
-
     <Label  text="Velocity:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
     <TextField fx:id="velocityField" text = "71" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
 
@@ -38,6 +37,10 @@
                   width = "200"
                   height = "200"
                   GridPane.columnSpan = "2"/>
+
+    <Label text="Total Flight Time: " GridPane.columnIndex="0" GridPane.rowIndex="6"/>
+    <Label id="flightTime"  GridPane.columnIndex="1" GridPane.rowIndex="6"/>
+
 </GridPane>
 
 

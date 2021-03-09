@@ -8,7 +8,7 @@ import java.util.*;
  */
 public class Dictionary {
 
-    private final Map<String, String> wordsToDefinitions = new HashMap<>();
+    private final Map<String,String> wordsToDefinitions = new HashMap<>();
 
     public Dictionary(String path) throws FileNotFoundException {
 

@@ -32,7 +32,8 @@ public class RocketControllerTest {
         controller.rocketCanvas = mock(RocketCanvas.class);
         controller.locationLabel = mock(Label.class);
         ActionEvent event = mock(ActionEvent.class);
-        //controller.result = mock(Label.class);
+        doReturn("3").when(controller.secondsField).getText();
+        controller.flightTime = mock(Label.class);
 
         //when
         controller.calculateRocket(null);

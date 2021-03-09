@@ -9,7 +9,8 @@ import javafx.scene.control.TextField;
 
 
 public class RocketController {
-
+    @FXML
+    public Button calculateButton;
     @FXML
     TextField velocityField;
     @FXML
@@ -20,6 +21,8 @@ public class RocketController {
     Label locationLabel;
     @FXML
     RocketCanvas rocketCanvas;
+    @FXML
+    Label flightTime;
 
 
     public void calculateRocket(ActionEvent actionEvent) {
@@ -30,11 +33,15 @@ public class RocketController {
 
         Rocket rocket = new Rocket(velocity, angle);
 
-        String result = String.format("(%.2f, %.2f)",
+        String position = String.format("(%.2f, %.2f)",
                         rocket.getX(seconds),
                         rocket.getY(seconds));
 
-        locationLabel.setText(result);
+        String time = rocket.timeToLand() + "";
+        //System.out.println(rocket.timeToLand());
+
+        locationLabel.setText(position);
+        flightTime.setText(time);
         rocketCanvas.draw(rocket);
 
     }

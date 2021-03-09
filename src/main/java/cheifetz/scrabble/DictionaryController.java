@@ -1,6 +1,5 @@
 package cheifetz.scrabble;
 
-import cheifetz.physics.Rocket;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
