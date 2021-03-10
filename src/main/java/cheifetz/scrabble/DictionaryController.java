@@ -17,8 +17,7 @@ public class DictionaryController {
 
     public void check(ActionEvent actionEvent) throws FileNotFoundException {
         String word = wordField.getText();
-
-        Dictionary dictionary = new Dictionary("/Users/ahuvacheifetz/Downloads/dictionary.txt");
+        Dictionary dictionary = new Dictionary();
         String result = dictionary.hasWord(word)+"";
         resultField.setText(result);
 

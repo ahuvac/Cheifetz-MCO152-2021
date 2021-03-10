@@ -3,26 +3,53 @@ package cheifetz.scrabble;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
+import javafx.scene.control.Label;
+import javafx.scene.input.MouseEvent;
 
 import java.io.FileNotFoundException;
+import java.util.List;
 
 public class ScrabbleController {
     @FXML
-    public Button submit;
+    Button submit;
     @FXML
-    TextField clear;
+    Button clear;
     @FXML
-    TextField num_points;
+    Button points;
 
-    public void checkWord(ActionEvent event) throws FileNotFoundException {
-        Dictionary dict = new Dictionary("dictionary.txt");
+    @FXML
+    List<Label> answerLabels;
+    @FXML
+    List<Label> letterLabels;
 
+    private LetterBag letterBag = new LetterBag();
+    private Dictionary dictionary;
+
+    public ScrabbleController() {
+        try {
+            dictionary = new Dictionary();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
     }
-    public void clear(ActionEvent actionEvent){
-        System.out.println("hi");
+
+    @FXML
+    public void initialize() {
+        for (Label label : letterLabels) {
+            label.setText(letterBag.nextLetter() + "");
+        }
     }
-    public void getPoints(ActionEvent actionEvent){
-        System.out.println("hi");
+
+    public void onAnswerClicked(MouseEvent event) {
+        Label label = (Label) event.getSource();
+    }
+
+    public void onLetterClicked(MouseEvent mouseEvent) {
+    }
+
+    public void onSubmit(ActionEvent actionEvent) {
+    }
+
+    public void onClear(ActionEvent actionEvent) {
     }
 }

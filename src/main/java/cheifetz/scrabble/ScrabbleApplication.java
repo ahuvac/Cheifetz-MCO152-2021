@@ -12,7 +12,7 @@ public class ScrabbleApplication extends Application {
         public void start(Stage stage) throws Exception {
             Parent root = FXMLLoader.load(getClass().getResource("/scrabble_application.fxml"));
 
-            Scene scene = new Scene(root, 500, 350);
+            Scene scene = new Scene(root, 300, 250);
 
             stage.setTitle("Scrabble App");
             stage.setScene(scene);

@@ -10,9 +10,9 @@ public class Dictionary {
 
     private final Map<String,String> wordsToDefinitions = new HashMap<>();
 
-    public Dictionary(String path) throws FileNotFoundException {
+    public Dictionary() throws FileNotFoundException {
 
-        Scanner scan = new Scanner(new File(path));
+        Scanner scan = new Scanner(new File("dictionary.txt"));
         while(scan.hasNext()){
             wordsToDefinitions.put(
                     scan.next(), //key
