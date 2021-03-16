@@ -24,3 +24,8 @@ Button{
 -fx-pref-height: 30;
 -fx-pref-width: 75;
 }
+
+Label.points{
+-fx-background-color: #DCDCDC;
+-fx-text-fill: black;
+}

@@ -44,11 +44,13 @@ public class ScrabbleController {
 
     public void onLetterClicked(MouseEvent event) {
         Label srcLabel = (Label) event.getSource();
-        Label nextAnswerLabel = answerLabels.get(count);
-        nextAnswerLabel.setText(srcLabel.getText());
-        whitetoBlack(nextAnswerLabel);
-        clearLabel(srcLabel);
-        count++;
+        if (!srcLabel.getText().equals("  ")) {
+            Label nextAnswerLabel = answerLabels.get(count);
+            nextAnswerLabel.setText(srcLabel.getText());
+            whitetoBlack(nextAnswerLabel);
+            clearLabel(srcLabel);
+            count++;
+        }
     }
 
     public void onSubmit(ActionEvent actionEvent) {
@@ -76,10 +78,16 @@ public class ScrabbleController {
     }
 
     public void onClear(ActionEvent actionEvent) {
+        for(Label label : answerLabels){
+            putLetterBack(label);
+        }
         clearAnswers();
     }
 
     public void onScramble(ActionEvent actionEvent) {
+        for(Label label : answerLabels){
+            putLetterBack(label);
+        }
         clearAnswers();
         initialize();
     }
@@ -126,12 +134,10 @@ public class ScrabbleController {
     public void fillEmptyTiles() {
         for (Label label : letterLabels) {
             if (label.getText().equals("  ")) {
-                whitetoBlack(label);
-                if (letterBag.isEmpty()) {
-                    showAlert("Game Over", "Game Over", "You used up all the tiles. Final Score: " + numPoints);
-
-                } else {
+                if (!letterBag.isEmpty()) {
+                    whitetoBlack(label);
                     label.setText(letterBag.nextLetter() + "");
+                    clearAnswers();
                 }
             }
         }
@@ -144,20 +150,12 @@ public class ScrabbleController {
                 whitetoBlack(letLabel);
                 clearLabel(ansLabel);
                 break;
-
             }
         }
     }
 
     private void clearAnswers() {
         count = 0;
-        for (Label ansLabel : answerLabels) {
-            if (!ansLabel.getText().equals("  ")) {
-                putLetterBack(ansLabel);
-            } else {
-                break;
-            }
-        }
         for (Label label : answerLabels) {
             clearLabel(label);
         }
@@ -166,6 +164,7 @@ public class ScrabbleController {
     private void clearLabel(Label label) {
         blacktoWhite(label);
         label.setText("  ");
+       // count--;
     }
 
     private void blacktoWhite(Label label) {
