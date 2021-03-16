@@ -1,14 +1,26 @@
 Label{
--fx-border-color:black;
--fx-border-width: 1;
--fx-border-style: solid;
+-fx-background-color: black;
+-fx-text-fill: white;
+-fx-pref-height: 45;
+-fx-pref-width: 45;
+-fx-size: 10;
+-fx-alignment:CENTER;
 -fx-padding: 5 8 5 8;
 }
 
+Label.topClickable{
+-fx-background-color: white;
+-fx-pref-height: 45;
+-fx-pref-width: 45;
+-fx-size: 10;
+-fx-alignment:CENTER;
+-fx-padding: 5 8 5 8;
+}
+}
+
 Button{
--fx-border-color:black;
--fx-border-width: 1;
--fx-border-style: solid;
-minHeight="30"
-minWidth="75"
+-fx-pref-height: 45;
+-fx-pref-width: 45;
+-fx-pref-height: 30;
+-fx-pref-width: 75;
 }
