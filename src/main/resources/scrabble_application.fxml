@@ -20,10 +20,12 @@
     <Label text = "  " styleClass="topClickable" fx:id="answerLabel5" onMouseClicked="#onAnswerClicked" GridPane.columnIndex="10" GridPane.rowIndex="0"/>
     <Label text = "  " styleClass="topClickable" fx:id="answerLabel6" onMouseClicked="#onAnswerClicked" GridPane.columnIndex="12" GridPane.rowIndex="0"/>
 
-    <Button fx:id="clearButton" onAction="#onClear" text="clear" GridPane.columnSpan="4" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
-    <Button fx:id="submitButton" onAction="#onSubmit" text="submit" GridPane.columnSpan="4" GridPane.columnIndex="5" GridPane.rowIndex="4"/>
-    <Label fx:id="pointsLabel" styleClass="points" GridPane.columnSpan="4" GridPane.columnIndex="9" GridPane.rowIndex="4"
-    />
+    <Button fx:id="clearButton" onAction="#onClear" text="clear" GridPane.columnSpan="3" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+    <Button fx:id="newLetters" onAction="#onScramble" text="switch" GridPane.columnSpan="3" GridPane.columnIndex="4" GridPane.rowIndex="4"/>
+    <Button fx:id="submitButton" onAction="#onSubmit" text="submit" GridPane.columnSpan="5" GridPane.columnIndex="7" GridPane.rowIndex="4"/>
+    <Label fx:id="pointsLabel" styleClass="points" GridPane.columnSpan="2" GridPane.columnIndex="11" GridPane.rowIndex="4"/>
+
+
 
     <Label fx:id="letterLabel0" GridPane.columnIndex="0" GridPane.rowIndex="8" onMouseClicked="#onLetterClicked"/>
     <Label fx:id="letterLabel1" GridPane.columnIndex="2" GridPane.rowIndex="8" onMouseClicked="#onLetterClicked"/>

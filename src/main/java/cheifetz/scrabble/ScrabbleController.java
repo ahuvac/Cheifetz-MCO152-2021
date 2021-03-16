@@ -32,36 +32,22 @@ public class ScrabbleController {
         }
     }
 
-
-    public void initialize() {
-        for (Label label : letterLabels) {
-            label.setText(letterBag.nextLetter() + "");
-        }
-    }
-
-
     public void onAnswerClicked(MouseEvent event) {
         Label label = (Label) event.getSource();
-        //if its the last label
-        if(answerLabels.indexOf(label) == count - 1){
+        //only allowed to put back if its the last label
+        if (answerLabels.indexOf(label) == count - 1) {
             putLetterBack(label);
-            label.setText("  ");
-            label.setStyle("-fx-background-color:white;");
-
+            clearLabel(label);
             count--;
         }
-        //count = 0;
-
-
     }
 
     public void onLetterClicked(MouseEvent event) {
-        Label label = (Label) event.getSource();
-        Label l = answerLabels.get(count);
-        l.setStyle("-fx-background-color:black; -fx-text-fill: white;");
-        label.setStyle("-fx-background-color:white;");
-        l.setText(label.getText());
-        label.setText("  ");
+        Label srcLabel = (Label) event.getSource();
+        Label nextAnswerLabel = answerLabels.get(count);
+        nextAnswerLabel.setText(srcLabel.getText());
+        whitetoBlack(nextAnswerLabel);
+        clearLabel(srcLabel);
         count++;
     }
 
@@ -74,8 +60,8 @@ public class ScrabbleController {
         if (dictionary.hasWord(word.toString())) {
             numPoints += score(word.toString());
             pointsLabel.setText(numPoints + "");
-            count = 0;
             fillEmptyTiles();
+            clearAnswers();
         } else {
             showAlert("error", "Word not found.", "Sorry, no such word exists.");
             for (Label ansLabel : answerLabels) {
@@ -86,17 +72,31 @@ public class ScrabbleController {
                 }
             }
         }
-        clearAnswers();
-
+        count = 0;
     }
-
 
     public void onClear(ActionEvent actionEvent) {
         clearAnswers();
     }
 
+    public void onScramble(ActionEvent actionEvent) {
+        clearAnswers();
+        initialize();
+    }
 
-    //helper methods
+
+    //////////////////
+    //HELPER METHODS//
+    //////////////////
+
+
+    public void initialize() {
+        for (Label label : letterLabels) {
+            if (!letterBag.isEmpty()) {
+                label.setText(letterBag.nextLetter() + "");
+            }
+        }
+    }
 
     public int score(String word) {
         switch (word.length()) {
@@ -116,7 +116,7 @@ public class ScrabbleController {
     }
 
     public void showAlert(String title, String header, String content) {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle(title);
         alert.setHeaderText(header);
         alert.setContentText(content);
@@ -126,41 +126,28 @@ public class ScrabbleController {
     public void fillEmptyTiles() {
         for (Label label : letterLabels) {
             if (label.getText().equals("  ")) {
-                label.setStyle("-fx-background-color:black; -fx-text-fill:white;");
-                label.setText(letterBag.nextLetter() + "");
+                whitetoBlack(label);
+                if (letterBag.isEmpty()) {
+                    showAlert("Game Over", "Game Over", "You used up all the tiles. Final Score: " + numPoints);
+
+                } else {
+                    label.setText(letterBag.nextLetter() + "");
+                }
             }
         }
     }
-
-//   // private void putLettersBack() {
-//        for (Label ansLabel : answerLabels) {
-//            if (!ansLabel.getText().equals("  ")) {
-//                for (Label letLabel : letterLabels) {
-//                    if (letLabel.getText().equals("  ")) {
-//                        letLabel.setText(ansLabel.getText());
-//                        break;
-//                        //ansLabel.setText("  ");
-//                    }
-//
-//                }
-//            } else {
-//                break;
-//            }
-//        }
-//    }
 
     private void putLetterBack(Label ansLabel) {
         for (Label letLabel : letterLabels) {
             if (letLabel.getText().equals("  ")) {
                 letLabel.setText(ansLabel.getText());
-                letLabel.setStyle("-fx-background-color:black; -fx-text-fill:white;");
+                whitetoBlack(letLabel);
+                clearLabel(ansLabel);
                 break;
-                //ansLabel.setText("  ");
+
             }
         }
     }
-
-
 
     private void clearAnswers() {
         count = 0;
@@ -172,9 +159,21 @@ public class ScrabbleController {
             }
         }
         for (Label label : answerLabels) {
-            label.setStyle("-fx-background-color: white;");
-            label.setStyle("-fx-text-fill: black;");
-            label.setText("  ");
+            clearLabel(label);
         }
     }
+
+    private void clearLabel(Label label) {
+        blacktoWhite(label);
+        label.setText("  ");
+    }
+
+    private void blacktoWhite(Label label) {
+        label.setStyle("-fx-background-color: white;");
+    }
+
+    private void whitetoBlack(Label label) {
+        label.setStyle("-fx-background-color: black; -fx-text-fill: white;");
+    }
+
 }
