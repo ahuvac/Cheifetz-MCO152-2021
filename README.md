@@ -1,3 +1,5 @@
+# Rocket Application
+Displays a rocket's position and flight time and draws an image depicting the rocket's trajectory.
 # Scrabble Application
 This is a scrabble like game where the user attempts to enter a word from his given letters.
 
