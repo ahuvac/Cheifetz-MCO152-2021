@@ -164,7 +164,7 @@ public class ScrabbleController {
     private void clearLabel(Label label) {
         blacktoWhite(label);
         label.setText("  ");
-       // count--;
+        // count--;
     }
 
     private void blacktoWhite(Label label) {

@@ -8,22 +8,20 @@ import javafx.stage.Stage;
 
 public class ScrabbleApplication extends Application {
 
-        @Override
-        public void start(Stage stage) throws Exception {
-            Parent root = FXMLLoader.load(getClass().getResource("/scrabble_application.fxml"));
+    @Override
+    public void start(Stage stage) throws Exception {
+        Parent root = FXMLLoader.load(getClass().getResource("/scrabble_application.fxml"));
 
-            Scene scene = new Scene(root, 450, 300);
+        Scene scene = new Scene(root, 450, 300);
 
-            stage.setTitle("Scrabble App");
-            stage.setScene(scene);
-            stage.show();
-        }
-
-
-        public static void main(String[] args) {
-            launch(args);
-        }
-
+        stage.setTitle("Scrabble App");
+        stage.setScene(scene);
+        stage.show();
     }
 
 
+    public static void main(String[] args) {
+        launch(args);
+    }
+
+}
