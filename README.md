@@ -8,7 +8,7 @@ This is a scrabble like game where the user attempts to enter a word from his gi
 If the word exists in the dictionary, he gets points.
 
 The points are as follows:
-* 2 letter word:  11 points
+* 2 letter word:  1 point
 * 3 letter word:  3 points
 * 4 letter word:  5 points
 * 5 letter word:  7 points
