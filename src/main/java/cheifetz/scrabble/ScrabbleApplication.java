@@ -10,9 +10,15 @@ public class ScrabbleApplication extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/scrabble_application.fxml"));
+        Dictionary dictionary = new Dictionary();
+        LetterBag letterBag = new LetterBag();
+        ScrabbleController controller = new ScrabbleController(dictionary, letterBag);
 
-        Scene scene = new Scene(root, 450, 300);
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/scrabble_application.fxml"));
+        loader.setController(controller);
+
+        Parent parent = loader.load();
+        Scene scene = new Scene(parent, 450, 300);
 
         stage.setTitle("Scrabble App");
         stage.setScene(scene);

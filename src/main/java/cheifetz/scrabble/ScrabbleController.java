@@ -19,17 +19,19 @@ public class ScrabbleController {
     List<Label> letterLabels;
 
     private int count;
-    private final LetterBag letterBag = new LetterBag();
+    private final LetterBag letterBag;
     private Dictionary dictionary;
     private int numPoints = 0;
 
 
-    public ScrabbleController() {
+    public ScrabbleController(Dictionary dictionary,
+                              LetterBag letterBag) {
         try {
             dictionary = new Dictionary();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
+            this.letterBag = letterBag;
     }
 
     public void onAnswerClicked(MouseEvent event) {
