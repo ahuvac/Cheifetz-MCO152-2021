@@ -8,6 +8,7 @@ import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.List;
 
 public class ScrabbleController {
@@ -25,7 +26,7 @@ public class ScrabbleController {
 
 
     public ScrabbleController(Dictionary dictionary,
-                              LetterBag letterBag) {
+                              LetterBag letterBag) throws IOException {
         try {
             dictionary = new Dictionary();
         } catch (FileNotFoundException e) {

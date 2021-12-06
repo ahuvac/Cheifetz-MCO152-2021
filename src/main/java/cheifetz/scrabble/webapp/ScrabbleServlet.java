@@ -10,7 +10,7 @@ import java.io.PrintWriter;
 public class ScrabbleServlet extends HttpServlet {
     private final Dictionary dictionary;
 
-    public ScrabbleServlet() throws FileNotFoundException {
+    public ScrabbleServlet() throws IOException {
         dictionary = new Dictionary();
     }
 
