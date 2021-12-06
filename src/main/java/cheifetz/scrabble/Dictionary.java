@@ -9,16 +9,17 @@ public class Dictionary {
     private final Map<String,String> wordsToDefinitions = new HashMap<>();
 
     public Dictionary() throws IOException {
-        StringBuilder sb = new StringBuilder();
         InputStream in = getClass().getClassLoader().getResourceAsStream("dictionary.txt");
         BufferedReader reader = new BufferedReader(new InputStreamReader(in));
 
         String line;
         while ((line = reader.readLine()) != null) {
-            String[] pairs = line.split(" ", 2);
+            int index = line.indexOf(" ");
+            String word = index == -1 ? line : line.substring(0, index);
+            String definition = index > -1 ? line.substring(index + 1) : null;
             wordsToDefinitions.put(
-                    pairs[0], //key
-                    pairs[1].trim()); //value
+                    word, //key
+                    definition); //value
         }
     }
 

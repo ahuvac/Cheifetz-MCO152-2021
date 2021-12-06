@@ -20,9 +20,12 @@ public class ScrabbleServlet extends HttpServlet {
     ) throws IOException {
         PrintWriter out = response.getWriter();
 
+
+
         String word = request.getParameter("input");
-        String definition = dictionary.hasWord(word) ? dictionary.getDef(word)
-                                                     : "Invalid word";
-        out.println(definition);
+        String definition = dictionary.getDef(word);
+        String output = dictionary.getDef(word).equals("") ? "Invalid word"
+                                                      : definition;
+        out.println(output);
         }
 }
