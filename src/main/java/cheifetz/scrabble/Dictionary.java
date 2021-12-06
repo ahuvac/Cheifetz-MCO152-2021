@@ -1,8 +1,6 @@
 package cheifetz.scrabble;
-import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.*;
 import java.util.*;
-
 /**
  * creates an array of words
  */
@@ -10,15 +8,19 @@ public class Dictionary {
 
     private final Map<String,String> wordsToDefinitions = new HashMap<>();
 
-    public Dictionary() throws FileNotFoundException {
+    public Dictionary() throws IOException {
+        InputStream in = getClass().getClassLoader().getResourceAsStream("dictionary.txt");
+        BufferedReader reader = new BufferedReader(new InputStreamReader(in));
 
-        Scanner scan = new Scanner(new File("dictionary.txt"));
-        while(scan.hasNext()){
+        String line;
+        while ((line = reader.readLine()) != null) {
+            int index = line.indexOf(" ");
+            String word = index == -1 ? line : line.substring(0, index);
+            String definition = index > -1 ? line.substring(index + 1) : null;
             wordsToDefinitions.put(
-                    scan.next(), //key
-                    scan.nextLine().trim()); //value
+                    word, //key
+                    definition); //value
         }
-        //Arrays.sort(dictArray);
     }
 
     public boolean hasWord(String word) {

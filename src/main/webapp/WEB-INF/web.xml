@@ -1,0 +1,23 @@
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+         http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
+
+
+    <servlet>
+        <display-name>ScrabbleServlet</display-name>
+        <servlet-name>ScrabbleServlet</servlet-name>
+        <servlet-class>cheifetz.scrabble.ScrabbleServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ScrabbleServlet</servlet-name>
+        <url-pattern>/Scrabble</url-pattern>
+    </servlet-mapping>
+
+</web-app>
