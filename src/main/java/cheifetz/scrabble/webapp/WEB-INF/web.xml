@@ -12,7 +12,7 @@
     <servlet>
         <display-name>PathServlet</display-name>
         <servlet-name>PathServlet</servlet-name>
-        <servlet-class>cheifetz.scrabble.webapp.PathServlet</servlet-class>
+        <servlet-class>cheifetz.scrabble.webapp.ScrabbleServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>

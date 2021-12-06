@@ -7,10 +7,10 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-public class PathServlet extends HttpServlet {
+public class ScrabbleServlet extends HttpServlet {
     private final Dictionary dictionary;
 
-    public PathServlet() throws FileNotFoundException {
+    public ScrabbleServlet() throws FileNotFoundException {
         dictionary = new Dictionary();
     }
 
@@ -21,13 +21,8 @@ public class PathServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
 
         String word = request.getParameter("input");
-        String definition = dictionary.getDef(word);
-
-        if (dictionary.hasWord(word)) {
-            request.setAttribute(definition,"output");
-        } else {
-            out.println("Invalid word");
+        String definition = dictionary.hasWord(word) ? dictionary.getDef(word)
+                                                     : "Invalid word";
+        out.println(definition);
         }
-
-    }
 }

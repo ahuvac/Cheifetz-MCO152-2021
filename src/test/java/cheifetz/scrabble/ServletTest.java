@@ -1,6 +1,6 @@
 package cheifetz.scrabble;
 
-import cheifetz.scrabble.webapp.PathServlet;
+import cheifetz.scrabble.webapp.ScrabbleServlet;
 import org.junit.Test;
 
 import javax.servlet.http.HttpServletRequest;
@@ -14,7 +14,7 @@ public class ServletTest {
     @Test
     public void doGet() throws IOException {
         //given
-        PathServlet servlet = new PathServlet();
+        ScrabbleServlet servlet = new ScrabbleServlet();
         HttpServletRequest request = mock(HttpServletRequest.class);
         HttpServletResponse response = mock(HttpServletResponse.class);
         PrintWriter out = mock(PrintWriter.class);
