@@ -10,14 +10,14 @@
 
 
     <servlet>
-        <display-name>PathServlet</display-name>
-        <servlet-name>PathServlet</servlet-name>
+        <display-name>ScrabbleServlet</display-name>
+        <servlet-name>ScrabbleServlet</servlet-name>
         <servlet-class>cheifetz.scrabble.webapp.ScrabbleServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>PathServlet</servlet-name>
-        <url-pattern>/path</url-pattern>
+        <servlet-name>ScrabbleServlet</servlet-name>
+        <url-pattern>/Scrabble</url-pattern>
     </servlet-mapping>
 
 </web-app>
