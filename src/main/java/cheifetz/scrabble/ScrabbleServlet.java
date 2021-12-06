@@ -1,9 +1,8 @@
-package cheifetz.scrabble.webapp;
+package cheifetz.scrabble;
 import cheifetz.scrabble.Dictionary;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -20,12 +19,8 @@ public class ScrabbleServlet extends HttpServlet {
     ) throws IOException {
         PrintWriter out = response.getWriter();
 
-
-
-        String word = request.getParameter("input");
-        String definition = dictionary.getDef(word);
-        String output = dictionary.getDef(word).equals("") ? "Invalid word"
-                                                      : definition;
-        out.println(output);
+        String word = request.getParameter("word");
+        String definition = dictionary.hasWord(word) ? dictionary.getDef(word) : "Word not found";
+        out.println(definition);
         }
 }

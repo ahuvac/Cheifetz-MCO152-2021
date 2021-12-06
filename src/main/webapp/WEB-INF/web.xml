@@ -5,14 +5,14 @@
          version="3.1">
 
     <welcome-file-list>
-        <welcome-file>page.html</welcome-file>
+        <welcome-file>index.html</welcome-file>
     </welcome-file-list>
 
 
     <servlet>
         <display-name>ScrabbleServlet</display-name>
         <servlet-name>ScrabbleServlet</servlet-name>
-        <servlet-class>cheifetz.scrabble.webapp.ScrabbleServlet</servlet-class>
+        <servlet-class>cheifetz.scrabble.ScrabbleServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>

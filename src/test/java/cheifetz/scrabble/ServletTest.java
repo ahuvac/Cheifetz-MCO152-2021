@@ -1,6 +1,5 @@
 package cheifetz.scrabble;
 
-import cheifetz.scrabble.webapp.ScrabbleServlet;
 import org.junit.Test;
 
 import javax.servlet.http.HttpServletRequest;
