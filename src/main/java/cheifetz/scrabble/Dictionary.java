@@ -10,16 +10,12 @@ public class Dictionary {
 
     public Dictionary() throws IOException {
         InputStream in = getClass().getClassLoader().getResourceAsStream("dictionary.txt");
-        BufferedReader reader = new BufferedReader(new InputStreamReader(in));
+        Scanner scanner = new Scanner(new InputStreamReader(in));
 
-        String line;
-        while ((line = reader.readLine()) != null) {
-            int index = line.indexOf(" ");
-            String word = index == -1 ? line : line.substring(0, index);
-            String definition = index > -1 ? line.substring(index + 1) : null;
+        while(scanner.hasNext()){
             wordsToDefinitions.put(
-                    word, //key
-                    definition); //value
+                    scanner.next(), //key
+                    scanner.nextLine().trim()); //value
         }
     }
 
